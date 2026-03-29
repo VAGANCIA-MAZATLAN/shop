@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!-- Página INICIADA el 18/12/2025 By TC Designs -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<!-- OVERLAY -->
+<div id="cart-overlay" class="cart-overlay"></div>
+
+<!-- SIDEBAR CARRITO -->
+<aside id="cart-sidebar" class="cart-sidebar">
+
+  <div class="cart-header">
+    <h2>Carrito</h2>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+
+  <div id="cart-items" class="cart-items">
+    <!-- JS INYECTA PRODUCTOS -->
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cart-subtotal">$0</strong>
+    </div>
+
+    <button class="cart-checkout">
+      Finalizar pedido
+    </button>
+  </div>
+
+</aside>
+
+
+
+
+
+<body class="header-black">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <!-- USUARIO (izquierda) -->
+    <div class="user-info">
+      <div class="car-icon">
+        <button class="cart-btn" onclick="openCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- LOGO (centro) -->
+    <div class="Logo">
+      <a href="index.html">
+        <img class="logo" src="images/logo.png" alt="logo">
+      </a>
+    </div>
+
+    <!-- HAMBURGER (derecha) -->
+    <button class="hamburger" onclick="show()" aria-label="Menú">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
+    </button>
+
+  </header>
+
+  <!-- MENU FULLSCREEN -->
+  <div class="navigation">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Todas las Gorras</a></li>
+        <li><a href="avisolegal.html">Aviso Legal</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button id="toggleOrder" class="toggle-order">
+  MOSTRAR PEDIDO
+</button>
+
+
+
+<div class="checkout-wrapper">
+<main class="checkout">
+
+  <!-- RESUMEN MÓVIL -->
+  <div id="mobile-order-summary">
+    <span>Resumen del pedido</span>
+    <span id="mobile-order-total">$0</span>
+    <button id="mobile-toggle-order" class="toggle-order-btn">
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <aside id="order-detail">
+    <div id="mobile-cart-items">
+      <!-- JS clona los items del carrito aquí -->
+    </div>
+
+    <div class="summary">
+      <div><span>Subtotal</span><span id="mobile-subtotal">$0</span></div>
+      <div><span>Envío</span><span id="mobile-shipping">—</span></div>
+      <div class="total">
+        <span>Total Estimado</span>
+        <span id="mobile-total">$0</span>
+      </div>
+    </div>
+  </aside>
+
+  
+  <!-- IZQUIERDA -->
+  <section class="checkout-left">
+
+    <!-- CONTACTO -->
+    <div class="checkout-box">
+      <h2>Contacto</h2>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="tel" id="phone" placeholder="Número de teléfono" required>
+    </div>
+
+    <!-- ENTREGA -->
+    <div class="checkout-box">
+      <h2>Entrega</h2>
+
+      <input type="text" id="Country" placeholder="País" required>
+      <input type="text" id="firstName" placeholder="Nombres" required>
+      <input type="text" id="lastName" placeholder="Apellidos" required>
+      <input type="text" id="street" placeholder="Calle y número exterior" required>
+      <input type="text" id="colony" placeholder="Colonia">
+      <input type="text" id="references" placeholder="Referencias">
+
+      <div class="row">
+        <input type="text" id="zip" placeholder="Código Postal" required>
+        <input type="text" id="city" placeholder="Ciudad" required>
+        <input type="text" id="state" placeholder="Estado" required>
+      </div>
+    </div>
+
+    <!-- MÉTODOS DE ENVÍO -->
+    <div class="checkout-box">
+      <h2>Métodos de envío</h2>
+      <div id="shipping-options">
+        <div id="checkout-shipping-box" class="hidden">
+          <span>Envío</span>
+          <strong id="shipping-price">$0</strong>
+        </div>
+
+
+        <p class="muted">El costo de envío mostrado en la página es un precio estimado. El monto final podrá ajustarse y confirmarse vía WhatsApp antes de realizar el pago, con el fin de evitar variaciones derivadas de la ubicación u otros factores logísticos.</p>
+      </div>
+    </div>
+
+    <!-- PAGO -->
+    <div class="checkout-box">
+      <h2>Pago</h2>
+      <p class="muted">
+        El pago se realiza por transferencia bancaria u otros métodos.
+        Al hacer clic en <b>Pagar ahora</b> serás enviado a WhatsApp
+        para recibir los datos de pago.
+      </p>
+    </div>
+
+    <!-- BOTÓN -->
+    <button id="payNow" class="pay-btn">
+      Pagar ahora
+    </button>
+
+  </section>
+
+  <!-- DERECHA -->
+<!-- RESUMEN CHECKOUT -->
+<aside class="checkout-right">
+
+  <h3>RESUMEN DEL PEDIDO</h3>
+
+  <!-- ⬇️ ESTE ID ES CLAVE -->
+  <div id="checkout-cart-items"></div>
+  <div class="checkout-divider"></div>
+  <div class="summary">
+    <p class="checkout-disclaimer">
+      El precio final y los datos de pago serán confirmados por WhatsApp antes de realizar la transferencia.
+    </p>
+    <div><span>Subtotal</span><span id="checkout-subtotal">$0</span></div>
+    <div><span>Envío</span><span id="checkout-shipping">—</span></div>
+    <div class="total">
+      <span>Total Estimado</span>
+      <span id="checkout-total">$0</span>
+    </div>
+  </div>
+
+</aside>
+
+
+</main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="site-footer">
+
+    <p class="footer-slogan">VAGOS CON ESTILO</p>
+
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/vagancia_mazatlan/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@vaganciamazatlan?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100083517130350" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="avisolegal.html">Aviso Legal</a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 VAGANCIA MAZATLAN · Todos los derechos reservados
+    </p>
+
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal personalizado VAGANCIA MAZATLAN -->
+<div id="customAlert" class="modal">
+  <div class="modal-content">
+    <div class="alert-title">VAGANCIA MAZATLAN</div>
+    <div class="alert-message"></div>
+    <button id="alertBtn">Aceptar</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="firebase.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/checkout.js"></script>
+<script src="main.js"></script>
+
+
+
+</body>
+
+
+<div id="page-transition" class="no-show">
+  <img src="images/logo.png" alt="Loading">
+</div>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <title>Gracias | Vagancia Mazatlán</title>
+</head>
+
+<body>
+
+<!-- VIDEO -->
+<video autoplay loop playsinline id="bg-video">
+  <source src="videos/The Mask Video.mp4" type="video/mp4">
+</video>
+
+<!-- OVERLAY -->
+<div id="cart-overlay" class="cart-overlay"></div>
+
+<!-- SIDEBAR -->
+<aside id="cart-sidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h2>Carrito</h2>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+
+  <div id="cart-items" class="cart-items"></div>
+
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cart-subtotal">$0</strong>
+    </div>
+
+    <button class="cart-checkout">
+      Finalizar pedido
+    </button>
+  </div>
+</aside>
+
+<!-- HEADER -->
+<header class="header">
+
+  <div class="user-info">
+    <div class="car-icon">
+      <button class="cart-btn" onclick="openCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="Logo">
+    <a href="index.html">
+      <img class="logo" src="images/logo.png" alt="logo">
+    </a>
+  </div>
+
+  <button class="hamburger" onclick="show()" aria-label="Menú">
+    <div id="bar1" class="bar"></div>
+    <div id="bar2" class="bar"></div>
+    <div id="bar3" class="bar"></div>
+  </button>
+
+</header>
+
+<!-- MENU -->
+<div class="navigation">
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Todas las Gorras</a></li>
+      <li><a href="avisolegal.html">Aviso Legal</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- CONTENIDO -->
+<div class="gracias-container">
+
+  <!-- CONTENIDO -->
+  <div class="gracias-content">
+    <a href="index.html" class="btn_1_comprar_1">Gracias por Comprar</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+  <p class="footer-slogan">VAGOS CON ESTILO</p>
+
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/vagancia_mazatlan/" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@vaganciamazatlan" target="_blank">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100083517130350" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
+
+  <div class="footer-links">
+    <a href="avisolegal.html">Aviso Legal</a>
+  </div>
+
+  <p class="footer-copy">
+    © 2026 VAGANCIA MAZATLAN · Todos los derechos reservados
+  </p>
+
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="main.js"></script>
+<script src="firebase.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/producto.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/rendercatalogo.js"></script>
+
+</body>
+
+<div id="page-transition" class="no-show">
+  <img src="images/logo.png" alt="Loading">
+</div>
+
+</html>

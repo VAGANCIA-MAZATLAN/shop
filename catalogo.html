@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- Página INICIADA el 18/12/2025 By TC Designs -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OVERLAY -->
+<div id="cart-overlay" class="cart-overlay"></div>
+
+<!-- SIDEBAR CARRITO -->
+<aside id="cart-sidebar" class="cart-sidebar">
+
+  <div class="cart-header">
+    <h2>Carrito</h2>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+
+  <div id="cart-items" class="cart-items">
+    <!-- JS INYECTA PRODUCTOS -->
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cart-subtotal">$0</strong>
+    </div>
+
+    <button class="cart-checkout">
+      Finalizar pedido
+    </button>
+  </div>
+
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body class="header-black">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <!-- USUARIO (izquierda) -->
+    <div class="user-info">
+      <div class="car-icon">
+        <button class="cart-btn" onclick="openCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- LOGO (centro) -->
+    <div class="Logo">
+      <a href="index.html">
+        <img class="logo" src="images/logo.png" alt="logo">
+      </a>
+    </div>
+
+    <!-- HAMBURGER (derecha) -->
+    <button class="hamburger" onclick="show()" aria-label="Menú">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
+    </button>
+
+  </header>
+
+  <!-- MENU FULLSCREEN -->
+  <div class="navigation">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Todas las Gorras</a></li>
+        <li><a href="avisolegal.html">Aviso Legal</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <div class="catalogo-hero">
+
+    <div class="catalogo-hero-content">
+      <h1 class="catalogo-title">DISPONIBLE</h1>
+      <p class="catalogo-subtitle">Vagos con Estilo</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTOS -->
+<section class="producto-section">
+  <div id="productos-container" class="productos-wrapper"></div>
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="site-footer">
+
+    <p class="footer-slogan">VAGOS CON ESTILO</p>
+
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/vagancia_mazatlan/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@vaganciamazatlan?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100083517130350" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+
+    <div class="footer-links">
+      <a href="avisolegal.html">Aviso Legal</a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 VAGANCIA MAZATLAN · Todos los derechos reservados
+    </p>
+
+  </footer>
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="main.js"></script>
+<script src="firebase.js"></script>
+<script src="js/stock.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/producto.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/rendercatalogo.js"></script>
+
+
+
+</body>
+<div id="page-transition" class="no-show">
+  <img src="images/logo.png" alt="Loading">
+</div>
+</html>
