@@ -9,7 +9,7 @@ const productos = [
     marca: "VAGANCIA MAZATLAN & TC SNAP",
     materiales: "Visera curva de GAMUZA\nCorona de ALGODÓN\nInterior SATINADO\nAJUSTABLE\n",
     descripcion: "THE MASK es una gorra que representa identidad, carácter y actitud, con bordados inspirados en ''La Máscara'', reinterpretados con un estilo único y auténtico. Diseñada para los VAGOS CON ESTILO",
-    precio: 950,
+    precio: 899,
 
     imgFront: "images/gorras/The Mask/the_mask_1.png",
     imgBack: "images/gorras/The Mask/the_mask_2.png",
